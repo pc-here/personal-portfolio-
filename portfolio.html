@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pranjal Singh Chauhan | Python, WordPress and Web Builder</title>
+<meta name="description" content="Portfolio of Pranjal Singh Chauhan from Gurgaon: HTML, CSS, Python, and WordPress. Open to internships and freelance projects.">
+<style>
+:root{--bg:#09090d;--panel:#12131c;--line:#272a3a;--ink:#f2f3f8;--muted:#9a9db3;--lime:#c8ff00;--cyan:#22d3ee;--pink:#ff4d6d;
+--display:"Arial Black","Segoe UI Black","Helvetica Neue",system-ui,sans-serif;
+--sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;font-size:1.05rem;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px;border-radius:6px}
+.wrap{max-width:900px;margin:0 auto;padding:0 1.4rem}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--lime);z-index:20}
+header{position:sticky;top:0;z-index:10;background:rgba(9,9,13,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:.8rem;text-decoration:none;font-family:var(--display);letter-spacing:.14em;font-size:.95rem}
+.logo i{font-style:normal;display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--panel);border:1px solid var(--line);color:var(--lime);font-size:1.2rem;letter-spacing:0}
+nav{display:flex;gap:1.5rem}
+nav a{text-decoration:none;color:var(--muted);font-size:.95rem}
+nav a:hover{color:var(--lime)}
+#menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:10px;width:42px;height:42px;font-size:1.3rem;cursor:pointer}
+@media(max-width:700px){#menu{display:block}nav{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;background:var(--bg);padding:1rem 1.4rem 1.4rem;border-bottom:1px solid var(--line);gap:1rem}nav.open{display:flex}}
+.hero{padding:4.5rem 0 3rem;background:radial-gradient(circle at 1px 1px,#252839 1px,transparent 0) 0 0/28px 28px}
+.badge{display:inline-flex;align-items:center;gap:.7rem;border:1px solid var(--line);border-radius:99px;padding:.55rem 1.1rem;font-family:var(--mono);font-size:.78rem;letter-spacing:.1em;color:var(--muted);margin-bottom:2rem;background:var(--bg)}
+.badge:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--lime);flex:none}
+h1{font-family:var(--display);font-size:clamp(2.7rem,15vw,6.4rem);line-height:.98;margin:0 0 1.6rem;text-transform:uppercase;letter-spacing:-.01em}
+h1 .o{color:transparent;-webkit-text-stroke:2px var(--ink)}
+h1 .l{color:var(--lime)}
+.lead{font-size:1.2rem;color:var(--muted);max-width:34rem;margin:0 0 2rem}
+.btns{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:1rem 1.8rem;border-radius:99px;font-weight:700;text-decoration:none;border:1px solid var(--line);cursor:pointer;font:inherit;font-weight:700;color:var(--ink);background:none}
+.btn.p{background:var(--lime);color:#101400;border-color:var(--lime)}
+.btn:hover{transform:translateY(-2px)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;border-top:1px solid var(--line);margin-top:3.5rem;padding-top:2.2rem}
+.stats b{display:block;font-family:var(--display);font-size:2.4rem;line-height:1}
+.stats span{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+section{padding:5rem 0}
+.k{font-family:var(--mono);color:var(--lime);letter-spacing:.2em;font-size:.82rem;text-transform:uppercase;margin:0 0 1rem}
+h2{font-family:var(--display);font-size:clamp(1.7rem,6vw,2.6rem);line-height:1.1;margin:0 0 1.3rem}
+p.t{color:var(--muted);max-width:36rem;margin:0 0 1.1rem}
+.dots{list-style:none;padding:0;margin:1.6rem 0 0;font-family:var(--mono);font-size:.95rem}
+.dots li{padding-left:1.5rem;position:relative;margin:.6rem 0}
+.dots li:before{content:"";position:absolute;left:0;top:.6em;width:9px;height:9px;border-radius:50%;background:var(--lime)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:1.8rem;margin-bottom:1.4rem}
+.card .k{display:flex;justify-content:space-between}
+.card .k em{font-style:normal;color:var(--muted)}
+.grp{font-family:var(--mono);font-size:.76rem;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;margin:1.4rem 0 .7rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem}
+.chips span{border:1px solid var(--line);border-radius:99px;padding:.55rem 1.1rem;font-size:.98rem}
+pre{margin:1rem 0 1.2rem;font-family:var(--mono);font-size:.88rem;line-height:1.7;overflow-x:auto;color:var(--ink)}
+.kw{color:var(--lime)}.fn{color:var(--cyan)}.st{color:var(--pink)}.cm{color:var(--muted)}
+.cp{background:none;border:1px solid var(--line);color:var(--ink);border-radius:99px;padding:.45rem 1rem;font:inherit;font-size:.85rem;cursor:pointer}
+.proj{border-left:4px solid var(--lime);border-radius:6px 22px 22px 6px}
+.proj h3{margin:.3rem 0 .4rem;font-family:var(--display);font-size:1.2rem}
+.proj p{margin:0;color:var(--muted)}
+.tag{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;border:1px solid var(--lime);color:var(--lime);border-radius:99px;padding:.2rem .8rem}
+label{display:block;font-family:var(--mono);font-size:.76rem;letter-spacing:.14em;color:var(--muted);margin:1.1rem 0 .4rem;text-transform:uppercase}
+select,input,textarea{width:100%;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:.95rem 1.1rem;font:inherit;font-family:var(--mono);font-size:.95rem}
+textarea{min-height:130px;resize:vertical}
+.est{margin-top:1.5rem;border:1px solid var(--line);border-radius:18px;padding:1.3rem;background:var(--bg)}
+.est small{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;color:var(--muted)}
+.est b{display:block;font-family:var(--display);font-size:clamp(1.5rem,7vw,2.1rem);color:var(--lime);margin:.4rem 0}
+.note{font-size:.88rem;color:var(--muted);margin:.8rem 0 0}
+.big{font-family:var(--display);font-size:clamp(3rem,20vw,9rem);line-height:.95;color:transparent;-webkit-text-stroke:1px #3a3e57;text-transform:uppercase;padding:2rem 0 0;overflow:hidden}
+footer{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--muted);font-size:.9rem}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv{opacity:1;transform:none;transition:none}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<div id="bar" aria-hidden="true"></div>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Pranjal Singh Chauhan, home"><i>P.</i>PRANJAL</a>
+    <button id="menu" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    <nav id="nav" aria-label="Main">
+      <a href="#about">About</a><a href="#stack">Stack</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div class="badge">OPEN TO INTERNSHIPS &amp; FREELANCE PROJECTS</div>
+  <h1>Web<br><span class="o">&amp; Python</span><br><span class="l">Builder</span></h1>
+  <p class="lead">I'm Pranjal, 20, from Gurgaon. I build simple pages with HTML, CSS, and WordPress, write Python scripts, and write clear English. I'm looking for my first internship or freelance project.</p>
+  <div class="btns"><a class="btn p" href="#projects">View projects</a><a class="btn" href="#contact">Get in touch</a></div>
+  <div class="stats">
+    <div><b data-n="20">0</b><span>Years old</span></div>
+    <div><b data-n="3">0</b><span>Core skills</span></div>
+    <div><b data-n="3">0</b><span>Projects underway</span></div>
+    <div><b data-n="1">0</b><span>First client wanted</span></div>
+  </div>
+</div></div>
+
+<section id="about"><div class="wrap rv">
+  <p class="k">01 - About</p>
+  <h2>Clear words. Simple pages.<br>Built step by step.</h2>
+  <p class="t">I'm learning web development and Python by building small things and fixing them until they work. I'm also fluent in English and type quickly, so I can help with page text as well as code.</p>
+  <ul class="dots"><li>Based in Gurgaon, India</li><li>Learning Python in VS Code</li><li>Available for remote work</li></ul>
+</div></section>
+
+<section id="stack"><div class="wrap">
+  <p class="k rv">02 - Stack</p>
+  <h2 class="rv">What I bring<br>to your build.</h2>
+  <div class="card rv">
+    <p class="k">Core stack <em>01</em></p>
+    <div class="grp">Frontend</div><div class="chips"><span>HTML</span><span>CSS</span></div>
+    <div class="grp">Backend</div><div class="chips"><span>Python</span></div>
+    <div class="grp">Website builder</div><div class="chips"><span>WordPress</span></div>
+    <div class="grp">Also</div><div class="chips"><span>VS Code</span><span>Fluent English</span><span>Fast typing</span></div>
+  </div>
+  <div class="card rv">
+    <p class="k">Snippet <em>02</em></p>
+<pre id="code"><span class="kw">def</span> <span class="fn">build_page</span>(idea):
+    draft = <span class="fn">write</span>(idea, style=<span class="st">"simple"</span>)
+    page = <span class="fn">design</span>(draft, mobile_first=<span class="kw">True</span>)
+    <span class="kw">return</span> <span class="fn">test_and_publish</span>(page)</pre>
+    <button class="cp" id="copy">Copy code</button>
+    <p class="note">How I approach every small project, in four lines.</p>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <p class="k rv">03 - Projects</p>
+  <h2 class="rv">Things I'm<br>building now.</h2>
+  <div class="card proj rv"><span class="tag">IN PROGRESS</span><h3>Monthly expense tracker</h3><p>A spreadsheet that sorts spending into categories like fuel and groceries, so I can see where the money goes each month.</p></div>
+  <div class="card proj rv"><span class="tag">IN PROGRESS</span><h3>Python practice scripts</h3><p>Small programs written in VS Code while I work through a beginner Python course, starting with my first script.</p></div>
+  <div class="card proj rv"><span class="tag">IN PROGRESS</span><h3>WordPress website</h3><p>Setting up pages, choosing a theme, and adjusting the layout so the site is easy to use on a phone.</p></div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <p class="k rv">04 - Contact</p>
+  <h2 class="rv">Let's build something<br>worth shipping.</h2>
+  <div class="card rv">
+    <p class="k">Instant estimate</p>
+    <p class="t">Pick a scope and the number updates live. Sample rates for the demo.</p>
+    <label for="svc">Service</label>
+    <select id="svc">
+      <option value="1500">Simple HTML and CSS page</option>
+      <option value="2000">WordPress page or site</option>
+      <option value="1000">Python script</option>
+      <option value="800">Website content rewrite</option>
+    </select>
+    <label for="size">Size</label>
+    <select id="size">
+      <option value="1">Small (1 page or task)</option>
+      <option value="2.4" selected>Medium (about 3)</option>
+      <option value="4">Large (5 or more)</option>
+    </select>
+    <div class="est" aria-live="polite"><small>BALLPARK</small><b id="out"></b><small>FINAL PRICE DEPENDS ON THE PROJECT</small></div>
+  </div>
+  <div class="card rv">
+    <p class="k">Or just say hi</p>
+    <form id="f">
+      <label for="n">Name</label><input id="n" required autocomplete="name">
+      <label for="e">Email</label><input id="e" type="email" required autocomplete="email">
+      <label for="m">Message</label><textarea id="m" required placeholder="Tell me about the project..."></textarea>
+      <p><button class="btn p" type="submit" style="width:100%;margin-top:1.4rem">Send message</button></p>
+    </form>
+    <p class="note" id="msg">Or email me: <a href="mailto:aka.pc30@gmail.com">aka.pc30@gmail.com</a></p>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><div class="big" aria-hidden="true">Pranjal</div><p>&copy; 2026 Pranjal Singh Chauhan. Gurgaon, India.</p></div></footer>
+
+<script>
+document.documentElement.classList.add('js');
+var $=function(s){return document.querySelector(s)};
+var still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// scroll progress
+var bar=$('#bar');
+function prog(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?h.scrollTop/m*100:0)+'%'}
+addEventListener('scroll',prog,{passive:true});prog();
+// reveal on scroll
+var els=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  els.forEach(function(el){io.observe(el)});
+}else{els.forEach(function(el){el.classList.add('in')})}
+// count-up stats
+function count(el){var t=+el.dataset.n;if(still){el.textContent=t;return}var s=null;function step(ts){if(!s)s=ts;var p=Math.min((ts-s)/900,1);el.textContent=Math.round(t*p);if(p<1)requestAnimationFrame(step)}requestAnimationFrame(step)}
+document.querySelectorAll('[data-n]').forEach(function(el){count(el)});
+// mobile menu
+var menu=$('#menu'),nav=$('#nav');
+menu.addEventListener('click',function(){var o=nav.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
+nav.addEventListener('click',function(){nav.classList.remove('open');menu.setAttribute('aria-expanded',false)});
+// copy snippet
+$('#copy').addEventListener('click',function(){
+  var b=this,t=$('#code').innerText;
+  function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy code'},1600)}
+  try{navigator.clipboard.writeText(t).then(done,done)}catch(e){done()}
+});
+// instant estimate
+function fmt(n){return '\u20B9'+(Math.round(n/50)*50).toLocaleString('en-IN')}
+function est(){var b=+$('#svc').value*+$('#size').value;$('#out').textContent=fmt(b*.85)+' - '+fmt(b*1.15)}
+$('#svc').addEventListener('change',est);$('#size').addEventListener('change',est);est();
+// contact form opens the email app
+$('#f').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var body='Hi Pranjal,\n\n'+$('#m').value+'\n\nFrom: '+$('#n').value+' ('+$('#e').value+')';
+  location.href='mailto:aka.pc30@gmail.com?subject='+encodeURIComponent('Project enquiry from '+$('#n').value)+'&body='+encodeURIComponent(body);
+  $('#msg').textContent='Opening your email app. If nothing opens, write to aka.pc30@gmail.com.';
+});
+</script>
+</body>
+</html>
